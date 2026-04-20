@@ -1,0 +1,101 @@
+.me-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.me-project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.me-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.me-project-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: var(--color-surface-light);
+}
+
+.me-project-card__content {
+  padding: var(--spacing-6);
+}
+
+.me-project-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.me-project-card__description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-4);
+}
+
+.me-project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.me-project-card__tag {
+  display: inline-flex;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: var(--radius-full);
+}
+
+.me-project-card__links {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.me-project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  background: var(--color-surface-light);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.me-project-card__link:hover {
+  color: var(--color-text-primary);
+  background: var(--color-primary);
+}
+
+.me-project-card__link svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5;
+}
+
+@media (max-width: 768px) {
+  .me-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .me-project-card__image {
+    height: 160px;
+  }
+}

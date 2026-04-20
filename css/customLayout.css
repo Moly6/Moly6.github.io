@@ -1,0 +1,589 @@
+:root {
+  /* 浅色背景 */
+  --primary-light: #f9f7f7;
+  /* 中浅色 */
+  --primary-medium: #dbe2ef;
+  /* 主色调蓝色 */
+  --primary-main: #3f72af;
+  /* 深色 */
+  --primary-dark: #112d4e;
+
+  /* RGBA 透明度版本 */
+  --primary-light-rgb: rgba(249, 247, 247);
+  --primary-medium-rgb: rgba(219, 226, 239);
+  --primary-main-rgb: rgba(63, 114, 175);
+  --primary-dark-rgb: rgba(17, 45, 78);
+
+  /* 珊瑚粉色 - 主色调 */
+  /* --primary-main: #ffc7c7; */
+  /* 浅粉色 - 浅色背景 */
+  /* --primary-light: #ffe2e2; */
+  /* 中性灰 - 内容背景 */
+  /* --primary-medium: #f6f6f6; */
+  /* 紫灰色 - 深色元素 */
+  /* --primary-dark: #8785a2; */
+
+  /* 全局字体设置 */
+  --global-font-size: 16px;
+
+  /* 背景相关 */
+  --moly-blog-bg: var(--primary-light);
+  --moly-404-bg: var(--primary-light);
+  --card-bg: rgba(249, 247, 247, 0.8);
+
+  /* 主题色彩 */
+  --moly-main: var(--primary-main);
+  --moly-theme: var(--primary-main);
+  --moly-blue: var(--primary-main);
+
+  /* 文字颜色 */
+  --moly-dark: var(--primary-dark);
+  --moly-black: var(--primary-dark);
+  --moly-light: var(--primary-light);
+  --moly-fontcolor: var(--primary-light);
+
+  /* 边框和分隔线 */
+  --moly-border: 1px solid var(--primary-medium);
+
+  /* 其他组件 */
+  --moly-relatedPosts: var(--primary-dark);
+  --moly-orange: #ff885f;
+  --scrollbar-color: var(--primary-main);
+  --progress-duration: 2s;
+}
+
+[data-theme="light"] {
+  --btn-bg: var(--primary-main);
+  --btn-hover-color: var(--primary-dark);
+}
+
+[data-theme="dark"] {
+  --moly-blog-bg: var(--primary-dark);
+  --moly-light: var(--primary-dark);
+  --moly-dark: var(--primary-light);
+  --search-bg: #1a2332;
+  --card-bg: rgba(45, 55, 72, 0.6);
+  --scrollbar-color: var(--primary-medium);
+  --moly-relatedPosts: var(--primary-dark);
+  --moly-404-bg: var(--primary-dark);
+}
+
+#web_bg {
+  position: fixed;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.live2d-widget-dialog-container {
+  height: auto !important;
+}
+/* ========================================
+   头像动画效果 (Avatar Animation Effects)
+   ======================================== */
+
+/* 头像呼吸灯效果 - 浅色主题 */
+[data-theme="light"] .avatar-img {
+  animation: avatar-breathing-light 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 3px 1px rgba(52, 152, 219, 0.4); /* 设置基础阴影避免抖动 */
+}
+
+/* 头像呼吸灯效果 - 深色主题 */
+[data-theme="dark"] .avatar-img {
+  animation: avatar-breathing-dark 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 2px 1px #80c8f8; /* 设置基础阴影避免抖动 */
+}
+
+/* 浅色主题呼吸动画 - 使用固定阴影尺寸避免抖动 */
+@keyframes avatar-breathing-light {
+  0%,
+  100% {
+    box-shadow: 0 0 4px #5581d1;
+  }
+  25% {
+    box-shadow: 0 0 16px #b8c72e;
+  }
+  50% {
+    box-shadow: 0 0 4px #5581d1;
+  }
+  75% {
+    box-shadow: 0 0 16px #c72ea1;
+  }
+}
+
+/* 深色主题呼吸动画 - 使用固定阴影尺寸避免抖动 */
+@keyframes avatar-breathing-dark {
+  0%,
+  100% {
+    box-shadow: 0 0 4px #71c6db;
+  }
+  25% {
+    box-shadow: 0 0 12px #5fb3f3;
+  }
+  50% {
+    box-shadow: 0 0 4px #a0d8fa;
+  }
+  75% {
+    box-shadow: 0 0 12px #7f5ff3;
+  }
+}
+
+/* 头像悬浮效果 - 暂停呼吸动画并添加缩放 */
+.avatar-img:hover {
+  animation-play-state: paused;
+  transform: scale(1.03);
+  transition: transform 0.2s ease-out;
+}
+
+/* 头像点击效果 */
+.avatar-img:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease-in;
+}
+
+/* ========================================
+   作者状态卡片 (Author Status Card)
+   ======================================== */
+
+/* 作者信息卡片容器 */
+.card-widget .card-info-avatar {
+  display: inline-block;
+  position: relative;
+}
+
+/* 状态框基础样式 */
+.card-info-avatar .author-status-box {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 28px);
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--card-border-color, #d0d7de);
+  border-radius: 50px;
+  background-color: var(--card-bg-light, #f8f8f8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 状态内容 */
+.card-info-avatar .author-status-box .author-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 6px;
+}
+
+/* 悬浮展开效果 */
+.card-info-avatar .author-status-box:hover {
+  width: 110px;
+  border-radius: 14px;
+  transform: translateX(-5px);
+}
+
+/* 状态文字展开 */
+.card-info-avatar .author-status-box:hover .author-status span {
+  width: 85px;
+  margin-left: 6px;
+  opacity: 1;
+}
+
+/* 状态文字基础样式 */
+.card-info-avatar .author-status-box .author-status span {
+  width: 0;
+  font-size: 12px;
+  font-weight: 500;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+/* ========================================
+   侧边栏信息卡片动画 (Sidebar Info Card Animation)
+   ======================================== */
+
+/* CSS 自定义属性 */
+:root {
+  --gradient-colors: #e8d8b9, #eccec5, #a3e9eb, #bdbdf0, #eec1ea;
+  --card-shadow: 0 4px 12px rgba(66, 68, 68, 0.15);
+  --card-shadow-hover: 0 8px 24px rgba(66, 68, 68, 0.2);
+}
+
+/* 侧边栏个人信息卡片动态渐变 */
+/* #aside-content > .card-widget.card-info {
+  background: linear-gradient(-45deg, var(--gradient-colors));
+  box-shadow: var(--card-shadow);
+  position: relative;
+  background-size: 400% 400%;
+  animation: gradient-flow 12s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+} */
+
+/* 卡片悬浮效果 */
+/* #aside-content > .card-widget.card-info:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+} */
+
+/* 渐变流动动画 */
+@keyframes gradient-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 30%;
+  }
+  50% {
+    background-position: 100% 70%;
+  }
+  75% {
+    background-position: 0% 70%;
+  }
+}
+
+/* ========================================
+   按钮样式 (Button Styles)
+   ======================================== */
+
+/* Follow me 按钮样式 */
+#aside-content > .card-widget.card-info > #card-info-btn {
+  background: linear-gradient(135deg, #3eb8be 0%, #2ea3a9 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(62, 184, 190, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 按钮悬浮效果 */
+#aside-content > .card-widget.card-info > #card-info-btn:hover {
+  background: linear-gradient(135deg, #2ea3a9 0%, #259499 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(62, 184, 190, 0.4);
+}
+
+/* 按钮点击效果 */
+#aside-content > .card-widget.card-info > #card-info-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(62, 184, 190, 0.3);
+}
+
+/* 深色主题按钮适配 */
+[data-theme="dark"] #aside-content > .card-widget.card-info > #card-info-btn {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44b7ae 100%);
+  box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
+}
+
+[data-theme="dark"]
+  #aside-content
+  > .card-widget.card-info
+  > #card-info-btn:hover {
+  background: linear-gradient(135deg, #44b7ae 0%, #3aa39a 100%);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
+/* ========================================
+   响应式设计 (Responsive Design)
+   ======================================== */
+
+/* ========================================
+   响应式设计 (Responsive Design)
+   ======================================== */
+
+/* 超大屏幕设备 */
+@media (min-width: 1920px) {
+  /* 预留给超大屏幕设备的样式 */
+}
+
+/* 大屏幕设备 */
+@media (max-width: 1440px) {
+  /* 预留给大屏幕设备的样式 */
+  #live2d-widget {
+    opacity: 0.8 !important;
+  }
+}
+
+/* 桌面设备 */
+@media (max-width: 1200px) {
+  /* 预留给桌面设备的样式 */
+  #live2d-widget {
+    display: none !important;
+  }
+}
+
+/* 平板横屏 */
+@media (max-width: 1024px) {
+  /* 预留给平板横屏的样式 */
+}
+
+/* 平板竖屏 */
+@media (max-width: 834px) {
+  /* 预留给平板竖屏的样式 */
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  /* 移动端头像呼吸效果减弱 */
+  [data-theme="light"] .avatar-img,
+  [data-theme="dark"] .avatar-img {
+    animation-duration: 6s;
+  }
+
+  /* 移动端状态框调整 */
+  .card-info-avatar .author-status-box {
+    width: 24px;
+    height: 24px;
+    left: calc(100% - 24px);
+  }
+
+  .card-info-avatar .author-status-box .author-status {
+    height: 24px;
+    padding: 0 4px;
+  }
+
+  .card-info-avatar .author-status-box:hover {
+    width: 90px;
+  }
+
+  .card-info-avatar .author-status-box:hover .author-status span {
+    width: 70px;
+    font-size: 11px;
+  }
+
+  /* 移动端渐变动画优化 */
+  #aside-content > .card-widget.card-info {
+    animation-duration: 15s;
+  }
+}
+
+/* 大屏手机 */
+@media (max-width: 640px) {
+  /* 预留给大屏手机的样式 */
+}
+
+/* 小屏幕设备 */
+@media (max-width: 480px) {
+  .card-info-avatar .author-status-box {
+    width: 20px;
+    height: 20px;
+    left: calc(100% - 20px);
+  }
+
+  .card-info-avatar .author-status-box .author-status {
+    height: 20px;
+    padding: 0 3px;
+  }
+}
+
+/* 极小屏幕设备 */
+@media (max-width: 360px) {
+  /* 预留给极小屏幕设备的样式 */
+}
+
+/* 超小屏幕设备 */
+@media (max-width: 320px) {
+  /* 预留给超小屏幕设备的样式 */
+}
+
+/* ========================================
+   性能优化 (Performance Optimization)
+   ======================================== */
+
+/* 减少重绘和回流 */
+.avatar-img,
+.card-info-avatar .author-status-box,
+#aside-content > .card-widget.card-info {
+  will-change: transform, box-shadow;
+}
+
+/* 预加载关键动画 */
+.avatar-img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 减少动画在低性能设备上的影响 */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-img,
+  #aside-content > .card-widget.card-info {
+    animation: none;
+  }
+
+  .card-info-avatar .author-status-box,
+  #aside-content > .card-widget.card-info > #card-info-btn {
+    transition: none;
+  }
+}
+
+/* ========================================
+   可访问性增强 (Accessibility Enhancement)
+   ======================================== */
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .card-info-avatar .author-status-box {
+    border-width: 2px;
+  }
+
+  #aside-content > .card-widget.card-info > #card-info-btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* 焦点可见性 */
+.card-info-avatar .author-status-box:focus,
+#aside-content > .card-widget.card-info > #card-info-btn:focus {
+  outline: 2px solid #3eb8be;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   浏览器兼容性 (Browser Compatibility)
+   ======================================== */
+
+/* Safari 兼容性 */
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  .card-info-avatar .author-status-box {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Firefox 兼容性 */
+@-moz-document url-prefix() {
+  .avatar-img {
+    image-rendering: -moz-crisp-edges;
+  }
+}
+
+/* 返回顶部 */
+
+button#go-up #percent {
+  display: none;
+  font-weight: bold;
+  font-size: 15px !important;
+}
+
+button#go-up span:nth-child(2) {
+  font-size: 12px !important;
+  margin-right: -1px;
+}
+
+/* 鼠标滑动到按钮上时显示返回顶部图标 */
+
+button#go-up:hover i {
+  display: block !important;
+}
+
+button#go-up:hover #percent {
+  display: none !important;
+}
+
+#aside-content .card-widget,
+#recent-posts > .recent-post-item,
+.cardHover,
+.layout > .recent-posts .pagination > :not(.space),
+.layout > div:first-child:not(.recent-posts) {
+  border-radius: 8px;
+  background: var(--card-bg);
+  -webkit-box-shadow: var(--card-box-shadow);
+  box-shadow: var(--card-box-shadow);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.snackbar-container {
+  color: #fff !important;
+  border-radius: 0 !important;
+  display: flex;
+  justify-content: center;
+  max-width: none !important;
+  min-width: 100% !important;
+  margin: 0;
+  left: 0 !important;
+  height: 60px !important;
+  transform: none !important;
+}
+
+.snackbar-container p {
+  font-weight: 600 !important;
+  text-align: center !important;
+  font-size: 1rem !important;
+}
+
+.snackbar-with-progress::after {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.1;
+  content: "";
+  animation: snackbar-progress var(--progress-duration) linear forwards;
+  pointer-events: none;
+}
+
+@keyframes snackbar-progress {
+  from {
+    width: 0;
+    border-radius: 0 20em 20em 0;
+  }
+
+  90% {
+    width: 90%;
+    border-radius: 0 20em 20em 0;
+  }
+
+  to {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.snackbar-container > .action {
+  color: var(--moly-fontcolor) !important;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px;
+  display: flex;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  cursor: pointer;
+}
+.snackbar-container > .action:hover {
+  background-color: var(--moly-theme);
+  color: var(--moly-white);
+  box-shadow: 0 0 5px 1px var(--moly-theme);
+  transform: scale(1.05);
+}

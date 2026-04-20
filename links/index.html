@@ -1,0 +1,805 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>网址收录 | Magic Yuan随记</title><meta name="author" content="Magic Yuan"><meta name="copyright" content="Magic Yuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&#x2F;&#x2F; 动态添加CSS到head       function loadCSS() {         const link &#x3D; document.createElement(&quot;link&quot;);         link.rel &#x3D; &quot;stylesheet&quot;;         link.href &#x3D; &quot;index.css?v&#x3D;1.0&quot;;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="网址收录">
+<meta property="og:url" content="https://moly6.github.io/links/index.html">
+<meta property="og:site_name" content="Magic Yuan随记">
+<meta property="og:description" content="&#x2F;&#x2F; 动态添加CSS到head       function loadCSS() {         const link &#x3D; document.createElement(&quot;link&quot;);         link.rel &#x3D; &quot;stylesheet&quot;;         link.href &#x3D; &quot;index.css?v&#x3D;1.0&quot;;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://moly6.github.io/img/avatar.png">
+<meta property="article:published_time" content="2026-04-20T15:06:14.752Z">
+<meta property="article:modified_time" content="2026-04-20T15:06:14.752Z">
+<meta property="article:author" content="Magic Yuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://moly6.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://moly6.github.io/links/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#607d8b","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网址收录',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'true'
+}</script><link rel="stylesheet" href="/css/iconfont.css?v=1.0"><link rel="stylesheet" href="/css/customLayout.css?v=1.0"><link rel="stylesheet" href="/css/pace.css?v=1.0"><link rel="stylesheet" href="/css/jquery.fancybox.min.css"><script src="/js/jquery-3.5.0.min.js"></script><script src="/js/jquery.fancybox.min.js"></script><script src="/js/pace.min.js"></script><script src="/js/customJs.js?v=1.0"></script><meta name="google-site-verification" content="EgjxhP-UlsF-z6MVVA-sbehs5f-vHfbdIyQjQ2Ji2bI" /><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/me/"><i class="fa-fw fas fa-user"></i><span> 个人</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 网址收录</span></a></div><div class="menus_item"><a class="site-page" href="/settings/"><i class="fa-fw fas fa-cog"></i><span> 设置</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page fixed" id="page-header" style="background-image: url(https://wp.upx8.com/api.php?content=风景&amp;t=1);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.png" alt="Logo"><span class="site-name">Magic Yuan随记</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/me/"><i class="fa-fw fas fa-user"></i><span> 个人</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 网址收录</span></a></div><div class="menus_item"><a class="site-page" href="/settings/"><i class="fa-fw fas fa-cog"></i><span> 设置</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">网址收录</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="container" id="article-container">
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // 动态添加CSS到head
+      function loadCSS() {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "index.css?v=1.0";
+        const existingLink = document.querySelector(
+          `link[href="${link.href}"]`
+        );
+        if (existingLink) {
+          existingLink.remove();
+        }
+        document.head.appendChild(link);
+      }
+      setTimeout(() => {
+        loadCSS();
+      }, 100);
+    </script>
+  </head>
+  <body>
+    <div class="links-page-container">
+      <div class="container">
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-link"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number" id="totalSites">0</span>
+              <span class="stat-label">收录网站</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number" id="totalCategories">0</span>
+              <span class="stat-label">分类</span>
+            </div>
+          </div>
+          <div class="stat-item" style="display: none">
+            <div class="stat-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">持续</span>
+              <span class="stat-label">更新中</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number" id="featuredCount">0</span>
+              <span class="stat-label">推荐</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="categories" id="categories">
+          <!-- 分类按钮将通过JS动态生成 -->
+        </div>
+        <div class="links-grid" id="linksGrid">
+          <!-- 网站卡片将通过JS动态生成 -->
+        </div>
+
+        <div
+          class="pagination-container"
+          id="paginationContainer"
+          style="display: none"
+        >
+          <div class="pagination-info">
+            <span
+              >显示 <span id="showingFrom">1</span>-<span id="showingTo"
+                >12</span
+              >
+              条，共 <span id="totalItems">0</span> 条</span
+            >
+          </div>
+          <div class="pagination-controls">
+            <button class="pagination-btn" id="prevBtn" disabled>
+              <i class="fas fa-chevron-left"></i>
+              上一页
+            </button>
+            <div class="pagination-pages" id="paginationPages">
+              <!-- 页码按钮将动态生成 -->
+            </div>
+            <button class="pagination-btn" id="nextBtn">
+              下一页
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-info" style="display: none">
+          <div class="info-box">
+            <h4>🚀 关于收录</h4>
+            <p>
+              本页面收录各类优质网站，包括但不限于：系统工具、开发资源、生活服务、音乐影视等。所有网站均经过筛选，确保内容质量。
+            </p>
+          </div>
+
+          <div class="contribute-box">
+            <h4>🤝 参与贡献</h4>
+            <p>
+              如果你知道不错的网站，欢迎推荐！我们会根据网站质量和实用性进行收录。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        // 定义全局命名空间
+        window.LinksPageNamespace = {
+          sitesData: null,
+          linksPageManager: null,
+          initialized: false,
+
+          // 加载网站数据
+          async loadSitesData() {
+            try {
+              const response = await fetch("./sites-data.json");
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              this.sitesData = await response.json();
+
+              // 数据加载完成后初始化页面
+              this.linksPageManager = new this.LinksPageManager();
+            } catch (error) {
+              console.error("加载网站数据失败:", error);
+
+              this.sitesData = {
+                categories: [
+                  { id: "all", name: "全部", icon: "fas fa-globe" },
+                  { id: "system", name: "系统工具", icon: "fas fa-cog" },
+                  { id: "other", name: "其他", icon: "fas fa-ellipsis-h" },
+                ],
+                sites: [],
+              };
+              console.error("无法加载网站数据，使用默认数据");
+              this.linksPageManager = new this.LinksPageManager();
+            }
+          },
+          LinksPageManager: class {
+            constructor() {
+              this.currentCategory = "all";
+              this.namespace = window.LinksPageNamespace;
+              this.currentPage = 1;
+              this.itemsPerPage = 12; // 每页显示的网站数量
+              this.filteredSites = []; // 过滤后的网站列表
+              this.init();
+            }
+
+            init() {
+              this.renderCategories();
+              this.renderSites();
+              this.updateStats();
+              this.bindEvents();
+              this.animateCards();
+            }
+
+            renderCategories() {
+              const categoriesContainer = document.getElementById("categories");
+              categoriesContainer.innerHTML = "";
+
+              this.namespace.sitesData.categories.forEach((category) => {
+                const button = document.createElement("button");
+                button.className = `category-btn ${
+                  category.id === "all" ? "active" : ""
+                }`;
+                button.dataset.category = category.id;
+                button.innerHTML = `<i class="${category.icon}"></i> ${category.name}`;
+                categoriesContainer.appendChild(button);
+              });
+            }
+            renderSites() {
+              this.updateFilteredSites();
+              this.renderCurrentPage();
+              this.renderPagination();
+            }
+
+            updateFilteredSites() {
+              // 获取网站列表并排序和过滤
+              this.filteredSites = [...this.namespace.sitesData.sites]
+                .filter((site) => {
+                  if (site.hidden || site.status !== "active") return false;
+                  if (this.currentCategory === "all") return true;
+                  return site.category === this.currentCategory;
+                })
+                .sort((a, b) => {
+                  // 先按 featured 排序，再按 sort 权重，最后按评分
+                  if (a.featured && !b.featured) return -1;
+                  if (!a.featured && b.featured) return 1;
+                  if (a.sort !== b.sort) return (b.sort || 0) - (a.sort || 0);
+                  return (b.rating || 0) - (a.rating || 0);
+                });
+            }
+
+            renderCurrentPage() {
+              const linksGrid = document.getElementById("linksGrid");
+              linksGrid.innerHTML = "";
+
+              // 计算当前页的数据范围
+              const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+              const endIndex = startIndex + this.itemsPerPage;
+              const sitesToShow = this.filteredSites.slice(
+                startIndex,
+                endIndex
+              );
+
+              // 渲染当前页的网站卡片
+              sitesToShow.forEach((site) => {
+                const card = this.createSiteCard(site);
+                linksGrid.appendChild(card);
+              });
+
+              // 在最后一页添加"添加更多"卡片
+              const totalPages = Math.ceil(
+                this.filteredSites.length / this.itemsPerPage
+              );
+              if (
+                this.currentPage === totalPages ||
+                this.filteredSites.length === 0
+              ) {
+                const addCard = this.createAddCard();
+                linksGrid.appendChild(addCard);
+              }
+            }
+
+            renderPagination() {
+              const totalItems = this.filteredSites.length;
+              const totalPages = Math.ceil(totalItems / this.itemsPerPage);
+              const paginationContainer = document.getElementById(
+                "paginationContainer"
+              );
+
+              // 如果总页数 <= 1，隐藏分页
+              if (totalPages <= 1) {
+                paginationContainer.style.display = "none";
+                return;
+              }
+
+              paginationContainer.style.display = "block";
+
+              // 更新信息显示
+              const startIndex = (this.currentPage - 1) * this.itemsPerPage + 1;
+              const endIndex = Math.min(
+                this.currentPage * this.itemsPerPage,
+                totalItems
+              );
+
+              document.getElementById("showingFrom").textContent = startIndex;
+              document.getElementById("showingTo").textContent = endIndex;
+              document.getElementById("totalItems").textContent = totalItems;
+
+              // 更新按钮状态
+              const prevBtn = document.getElementById("prevBtn");
+              const nextBtn = document.getElementById("nextBtn");
+
+              prevBtn.disabled = this.currentPage === 1;
+              nextBtn.disabled = this.currentPage === totalPages;
+
+              // 生成页码按钮
+              this.renderPageNumbers(totalPages);
+            }
+
+            renderPageNumbers(totalPages) {
+              const pagesContainer = document.getElementById("paginationPages");
+              pagesContainer.innerHTML = "";
+
+              // 计算显示的页码范围
+              let startPage = Math.max(1, this.currentPage - 2);
+              let endPage = Math.min(totalPages, this.currentPage + 2);
+
+              // 确保显示至少5个页码（如果可能）
+              if (endPage - startPage < 4) {
+                if (startPage === 1) {
+                  endPage = Math.min(totalPages, startPage + 4);
+                } else {
+                  startPage = Math.max(1, endPage - 4);
+                }
+              }
+
+              // 添加第一页和省略号
+              if (startPage > 1) {
+                this.createPageButton(1, pagesContainer);
+                if (startPage > 2) {
+                  const ellipsis = document.createElement("span");
+                  ellipsis.className = "pagination-ellipsis";
+                  ellipsis.textContent = "...";
+                  pagesContainer.appendChild(ellipsis);
+                }
+              }
+
+              // 添加页码按钮
+              for (let i = startPage; i <= endPage; i++) {
+                this.createPageButton(i, pagesContainer);
+              }
+
+              // 添加省略号和最后一页
+              if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                  const ellipsis = document.createElement("span");
+                  ellipsis.className = "pagination-ellipsis";
+                  ellipsis.textContent = "...";
+                  pagesContainer.appendChild(ellipsis);
+                }
+                this.createPageButton(totalPages, pagesContainer);
+              }
+            }
+
+            createPageButton(pageNumber, container) {
+              const button = document.createElement("button");
+              button.className = `pagination-page ${
+                pageNumber === this.currentPage ? "active" : ""
+              }`;
+              button.textContent = pageNumber;
+              button.addEventListener("click", () => this.goToPage(pageNumber));
+              container.appendChild(button);
+            }
+
+            goToPage(pageNumber) {
+              if (
+                pageNumber < 1 ||
+                pageNumber >
+                  Math.ceil(this.filteredSites.length / this.itemsPerPage)
+              ) {
+                return;
+              }
+
+              this.currentPage = pageNumber;
+              this.renderCurrentPage();
+              this.renderPagination();
+              this.animateCards();
+
+              // 滚动到顶部
+              document.querySelector(".links-grid").scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+            createSiteCard(site) {
+              const card = document.createElement("div");
+              card.className = "link-card";
+              card.dataset.category = site.category;
+
+              // 添加特色标记
+              if (site.featured) {
+                card.classList.add("featured");
+              }
+
+              const tagElements = site.tags
+                .map(
+                  (tag) =>
+                    `<span class="tag ${this.getTagClass(tag)}">${tag}</span>`
+                )
+                .join("");
+
+              const featureElements = site.features
+                .map((feature) => `<span class="feature">${feature}</span>`)
+                .join("");
+
+              // 生成评分星星
+              const ratingStars = this.generateRatingStars(site.rating || 0);
+
+              // 生成免费标记
+              const freeTag = site.free
+                ? '<span class="free-tag">免费</span>'
+                : "";
+
+              // 判断是否为新网站（7天内）
+              const isNew = this.isNewSite(site.addedDate);
+              const newTag = isNew ? '<span class="new-tag">NEW</span>' : "";
+
+              card.innerHTML = `
+                        <div class="card-header">
+                            <div class="site-icon">
+                                <i class="${site.icon}"></i>
+                            </div>
+                            <div class="site-info">
+                                <div class="site-title-row">
+                                    <h3 class="site-name">${site.name}</h3>
+                                    <div class="site-badges">
+                                        ${freeTag}
+                                        ${newTag}
+                                    </div>
+                                </div>
+                                <div class="site-meta">
+                                    <div class="site-tags">
+                                        ${tagElements}
+                                    </div>
+                                    <div class="site-rating">
+                                        ${ratingStars}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="site-description">${site.description}</p>
+                            <div class="site-features">
+                                ${featureElements}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="${site.url}" target="_blank" class="visit-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                访问网站
+                            </a>
+                        </div>
+                    `;
+
+              return card;
+            }
+            createAddCard() {
+              const card = document.createElement("div");
+              card.className = "link-card add-card";
+              card.innerHTML = `
+                        <div class="add-content">
+                            <div class="add-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>添加更多</h3>
+                            <p>持续收录优质网站中...</p>
+                            <button class="suggest-btn" onclick="window.LinksPageNamespace.linksPageManager.suggestSite()">
+                                推荐网站
+                            </button>
+                        </div>
+                    `;
+              return card;
+            }
+            getTagClass(tag) {
+              const tagClassMap = {
+                系统工具: "system",
+                开发工具: "dev",
+                生活服务: "life",
+                音乐影视: "music",
+                推荐: "featured",
+                最新: "new",
+              };
+              return tagClassMap[tag] || "other";
+            }
+
+            generateRatingStars(rating) {
+              if (!rating || rating <= 0) return "";
+
+              let stars = "";
+              for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                  stars += '<i class="fas fa-star star-filled"></i>';
+                } else {
+                  stars += '<i class="far fa-star star-empty"></i>';
+                }
+              }
+              return `<div class="rating-stars">${stars}</div>`;
+            }
+
+            isNewSite(addedDate) {
+              if (!addedDate) return false;
+              const added = new Date(addedDate);
+              const now = new Date();
+              const diffTime = Math.abs(now - added);
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+              return diffDays <= 7;
+            }
+            updateStats() {
+              const sites = this.namespace.sitesData.sites;
+              const featuredSites = sites.filter(
+                (site) => site.featured && site.status === "active"
+              );
+
+              document.getElementById("totalSites").textContent = sites.length;
+              document.getElementById("totalCategories").textContent =
+                this.namespace.sitesData.categories.length - 1; // 减去"全部"分类
+              document.getElementById("featuredCount").textContent =
+                featuredSites.length;
+            }
+            bindEvents() {
+              // 移除旧的事件监听器（如果存在）
+              const existingHandler = this.namespace.clickHandler;
+              if (existingHandler) {
+                document.removeEventListener("click", existingHandler);
+              }
+
+              // 创建新的事件处理器
+              const clickHandler = (e) => {
+                if (e.target.classList.contains("category-btn")) {
+                  this.handleCategoryChange(e.target);
+                } else if (
+                  e.target.classList.contains("suggest-btn") ||
+                  e.target.dataset.action === "suggest-site"
+                ) {
+                  e.preventDefault();
+                  this.suggestSite();
+                }
+              };
+
+              // 保存事件处理器引用
+              this.namespace.clickHandler = clickHandler;
+
+              // 添加事件监听器
+              document.addEventListener("click", clickHandler);
+
+              // 绑定分页事件
+              document
+                .getElementById("prevBtn")
+                .addEventListener("click", () => {
+                  this.goToPage(this.currentPage - 1);
+                });
+
+              document
+                .getElementById("nextBtn")
+                .addEventListener("click", () => {
+                  this.goToPage(this.currentPage + 1);
+                });
+            }
+            handleCategoryChange(button) {
+              // 更新按钮状态
+              document.querySelectorAll(".category-btn").forEach((btn) => {
+                btn.classList.remove("active");
+              });
+              button.classList.add("active");
+
+              // 更新当前分类和重置页码
+              this.currentCategory = button.dataset.category;
+              this.currentPage = 1;
+
+              // 重新渲染
+              this.renderSites();
+              this.animateCards();
+            }
+            animateCards() {
+              // 延迟显示卡片，创建动画效果
+              const cards = document.querySelectorAll(".link-card");
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add("show");
+                }, index * 100);
+              });
+            }
+
+            suggestSite() {
+              const email = "cc_sunny@foxmail.com";
+              const subject = "推荐优质网站";
+              const body = `你好！\n\n我想推荐一个网站：\n\n网站名称：\n网站地址：\n网站描述：\n分类：\n推荐理由：\n\n谢谢！`;
+
+              window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+                subject
+              )}&body=${encodeURIComponent(body)}`;
+            }
+
+            // 提供添加网站的方法，方便后续扩展
+            addSite(siteData) {
+              if (
+                !this.namespace.sitesData ||
+                !this.namespace.sitesData.sites
+              ) {
+                console.error("网站数据未加载，无法添加网站");
+                return;
+              }
+              this.namespace.sitesData.sites.push(siteData);
+              this.renderSites();
+              this.updateStats();
+              this.animateCards();
+            }
+          },
+        };
+
+        function initLinksPage() {
+          if (window.LinksPageNamespace.initialized) {
+            if (window.LinksPageNamespace.clickHandler) {
+              document.removeEventListener(
+                "click",
+                window.LinksPageNamespace.clickHandler
+              );
+            }
+            window.LinksPageNamespace.initialized = false;
+          }
+
+          // 重新加载数据并初始化
+          window.LinksPageNamespace.loadSitesData().then(() => {
+            window.LinksPageNamespace.initialized = true;
+          });
+        }
+
+        // 检查页面是否准备就绪
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initLinksPage);
+        } else {
+          setTimeout(() => {
+            initLinksPage();
+          }, 100);
+        }
+      })();
+    </script>
+  </body>
+</html>
+</div></div></main><footer id="footer" style="background-image: url(https://wp.upx8.com/api.php?content=风景&amp;t=17);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2019 - 2026 By Magic Yuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent"></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="/js/live2d-enhance.js?v=1.0"></script><script src="/js/snow.js?v=1.0"></script><div class="aplayer no-destroy" data-id="10051718332" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-mini="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":400,"hOffset":20,"vOffset":0},"mobile":{"show":false},"react":{"opacity":0.9},"dialog":{"enable":true},"log":false});</script></body></html>

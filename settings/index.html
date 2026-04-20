@@ -1,0 +1,663 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Magic Yuan随记 | Magic Yuan随记</title><meta name="author" content="Magic Yuan"><meta name="copyright" content="Magic Yuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="设置 - 博客设置中心             #live2d-widget {         display: none !important;       }">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Magic Yuan随记">
+<meta property="og:url" content="https://moly6.github.io/settings/index.html">
+<meta property="og:site_name" content="Magic Yuan随记">
+<meta property="og:description" content="设置 - 博客设置中心             #live2d-widget {         display: none !important;       }">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://moly6.github.io/img/avatar.png">
+<meta property="article:published_time" content="2026-04-20T15:06:14.753Z">
+<meta property="article:modified_time" content="2026-04-20T15:06:14.753Z">
+<meta property="article:author" content="Magic Yuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://moly6.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://moly6.github.io/settings/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#607d8b","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Magic Yuan随记',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'true'
+}</script><link rel="stylesheet" href="/css/iconfont.css?v=1.0"><link rel="stylesheet" href="/css/customLayout.css?v=1.0"><link rel="stylesheet" href="/css/pace.css?v=1.0"><link rel="stylesheet" href="/css/jquery.fancybox.min.css"><script src="/js/jquery-3.5.0.min.js"></script><script src="/js/jquery.fancybox.min.js"></script><script src="/js/pace.min.js"></script><script src="/js/customJs.js?v=1.0"></script><meta name="google-site-verification" content="EgjxhP-UlsF-z6MVVA-sbehs5f-vHfbdIyQjQ2Ji2bI" /><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/me/"><i class="fa-fw fas fa-user"></i><span> 个人</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 网址收录</span></a></div><div class="menus_item"><a class="site-page" href="/settings/"><i class="fa-fw fas fa-cog"></i><span> 设置</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.png" alt="Logo"><span class="site-name">Magic Yuan随记</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/me/"><i class="fa-fw fas fa-user"></i><span> 个人</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 网址收录</span></a></div><div class="menus_item"><a class="site-page" href="/settings/"><i class="fa-fw fas fa-cog"></i><span> 设置</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">Magic Yuan随记</h1></header><main class="layout hide-aside" id="content-inner"><div class="nc" id="page"><div class="container" id="article-container">
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>设置 - 博客设置中心</title>
+
+    <style>
+      #live2d-widget {
+        display: none !important;
+      }
+    </style>
+    <link rel="stylesheet" href="/settings/settings.css" />
+    <link rel="stylesheet" href="/settings/settings-mobile.css" />
+    <link rel="stylesheet" href="/settings/coloris.min.css" />
+    <script src="/settings/coloris.min.js"></script>
+  </head>
+  <body>
+    <!-- 移动端菜单切换按钮 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- 遮罩层 -->
+    <div class="settings-overlay" id="settingsOverlay"></div>
+
+    <!-- 设置页面容器 -->
+    <div class="settings-container">
+      <!-- 侧边导航栏 -->
+      <aside class="settings-sidebar">
+        <div class="sidebar-header">
+          <i class="fas fa-cog"></i>
+          <h2>设置中心</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li class="nav-item active" data-section="appearance">
+              <i class="fas fa-palette"></i>
+              <span>外观设置</span>
+            </li>
+            <li class="nav-item" data-section="background">
+              <i class="fas fa-image"></i>
+              <span>背景设置</span>
+            </li>
+            <li class="nav-item" data-section="behavior">
+              <i class="fas fa-mouse-pointer"></i>
+              <span>交互设置</span>
+            </li>
+            <li class="nav-item" data-section="performance">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>性能优化</span>
+            </li>
+            <li class="nav-item" data-section="data">
+              <i class="fas fa-database"></i>
+              <span>数据管理</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- 主内容区域 -->
+      <main class="settings-main">
+        <!-- <div class="settings-header">
+          <h1>博客设置</h1>
+          <p class="settings-subtitle">个性化你的博客体验</p>
+        </div> -->
+
+        <!-- 外观设置 -->
+        <section class="settings-section active" id="appearance">
+          <div class="section-header">
+            <h2><i class="fas fa-palette"></i> 外观设置</h2>
+            <p>调整博客的视觉外观和主题</p>
+          </div>
+
+          <div class="settings-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>主题模式</h3>
+                <p>选择浅色或深色主题</p>
+              </div>
+              <div class="setting-control">
+                <div class="theme-switcher">
+                  <button class="theme-btn active" data-theme="light">
+                    <i class="fas fa-sun"></i>
+                    <span>浅色</span>
+                  </button>
+                  <button class="theme-btn" data-theme="dark">
+                    <i class="fas fa-moon"></i>
+                    <span>深色</span>
+                  </button>
+                  <button class="theme-btn" data-theme="auto">
+                    <i class="fas fa-adjust"></i>
+                    <span>自动</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>字体大小</h3>
+                <p>调整页面文字的显示大小</p>
+              </div>
+              <div class="setting-control">
+                <div class="font-size-control">
+                  <input
+                    type="range"
+                    id="fontSize"
+                    min="12"
+                    max="20"
+                    value="16"
+                    step="1"
+                  />
+                  <span class="font-size-value">16px</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>页面宽度</h3>
+                <p>调整内容区域的最大宽度</p>
+              </div>
+              <div class="setting-control">
+                <select class="custom-select" id="pageWidth">
+                  <option value="1200px">标准 (1200px)</option>
+                  <option value="1400px">宽屏 (1400px)</option>
+                  <option value="100%">全屏</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 背景设置 -->
+        <section class="settings-section" id="background">
+          <div class="section-header">
+            <h2><i class="fas fa-image"></i> 背景设置</h2>
+            <p>自定义页面背景</p>
+          </div>
+
+          <div class="settings-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>背景类型</h3>
+                <p>选择背景的显示方式</p>
+              </div>
+              <div class="setting-control">
+                <div class="bg-type-selector">
+                  <label class="bg-type-option">
+                    <input type="radio" name="bgType" value="color" checked />
+                    <span class="bg-type-btn">
+                      <i class="fas fa-fill-drip"></i>
+                      纯色
+                    </span>
+                  </label>
+                  <label class="bg-type-option">
+                    <input type="radio" name="bgType" value="image" />
+                    <span class="bg-type-btn">
+                      <i class="fas fa-image"></i>
+                      图片
+                    </span>
+                  </label>
+                  <label class="bg-type-option">
+                    <input type="radio" name="bgType" value="gradient" />
+                    <span class="bg-type-btn">
+                      <i class="fas fa-brush"></i>
+                      渐变
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-item bg-color-setting">
+              <div class="setting-label">
+                <h3>背景颜色</h3>
+              </div>
+              <div class="setting-control">
+                <div class="color-picker-wrapper">
+                  <input
+                    type="text"
+                    id="bgColor"
+                    data-coloris
+                    class="coloris-picker"
+                    placeholder="选择颜色"
+                  />
+
+                  <div class="color-actions">
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      id="previewColorBtn"
+                    >
+                      <i class="fas fa-eye"></i>
+                      预览
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="applyColorBtn"
+                    >
+                      <i class="fas fa-check"></i>
+                      应用
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-item bg-image-setting" style="display: none">
+              <div class="setting-label">
+                <h3>背景图片</h3>
+                <p>上传图片作为背景</p>
+              </div>
+              <div class="setting-control">
+                <div class="image-upload-wrapper">
+                  <input
+                    type="file"
+                    id="bgImageFile"
+                    accept="image/*"
+                    style="display: none"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="uploadImageBtn"
+                  >
+                    <i class="fas fa-upload"></i>
+                    选择图片
+                  </button>
+                  <div
+                    class="image-preview"
+                    id="imagePreview"
+                    style="display: none"
+                  >
+                    <img id="previewImg" alt="背景预览" />
+                    <button
+                      type="button"
+                      class="btn btn-outline btn-remove"
+                      id="removeImageBtn"
+                    >
+                      <i class="fas fa-trash"></i>
+                      移除
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-item bg-url-setting" style="display: none">
+              <div class="setting-label">
+                <h3>图片链接</h3>
+                <p>输入图片的网络地址</p>
+              </div>
+              <div class="setting-control">
+                <input
+                  type="url"
+                  id="bgImageUrl"
+                  placeholder="https://t.alcy.cc/fj"
+                  class="custom-select"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>背景透明度</h3>
+                <p>调整背景的透明程度</p>
+              </div>
+              <div class="setting-control">
+                <div class="opacity-control">
+                  <input
+                    type="range"
+                    id="bgOpacity"
+                    min="0"
+                    max="100"
+                    value="100"
+                    step="5"
+                  />
+                  <span class="opacity-value">100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 交互设置 -->
+        <section class="settings-section" id="behavior">
+          <div class="section-header">
+            <h2><i class="fas fa-mouse-pointer"></i> 交互设置</h2>
+            <p>调整页面的交互行为</p>
+          </div>
+
+          <div class="settings-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>平滑滚动</h3>
+                <p>启用页面平滑滚动效果</p>
+              </div>
+              <div class="setting-control">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="smoothScroll" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>返回顶部按钮</h3>
+                <p>显示快速返回页面顶部的按钮</p>
+              </div>
+              <div class="setting-control">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="backToTop" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>阅读进度条</h3>
+                <p>在页面顶部显示阅读进度</p>
+              </div>
+              <div class="setting-control">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="readingProgress" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 性能优化 -->
+        <section class="settings-section" id="performance">
+          <div class="section-header">
+            <h2><i class="fas fa-tachometer-alt"></i> 性能优化</h2>
+            <p>提升页面加载和运行性能</p>
+          </div>
+
+          <div class="settings-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>图片懒加载</h3>
+                <p>延迟加载页面图片以提升加载速度</p>
+              </div>
+              <div class="setting-control">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="lazyLoad" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>动画效果</h3>
+                <p>启用页面过渡和动画效果</p>
+              </div>
+              <div class="setting-control">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="animations" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>预加载</h3>
+                <p>预加载关键资源</p>
+              </div>
+              <div class="setting-control">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="preload" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 数据管理 -->
+        <section class="settings-section" id="data">
+          <div class="section-header">
+            <h2><i class="fas fa-database"></i> 数据管理</h2>
+            <p>管理本地存储和缓存数据</p>
+          </div>
+
+          <div class="settings-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>本地存储</h3>
+                <p>查看和管理本地存储的设置数据</p>
+              </div>
+              <div class="setting-control">
+                <div class="data-info">
+                  <span class="data-size">约 2.3 KB</span>
+                  <button class="btn btn-outline" id="clearLocalStorage">
+                    清除数据
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>导出设置</h3>
+                <p>将当前设置导出为配置文件</p>
+              </div>
+              <div class="setting-control">
+                <button class="btn btn-primary" id="exportSettings">
+                  <i class="fas fa-download"></i>
+                  导出设置
+                </button>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <h3>导入设置</h3>
+                <p>从配置文件恢复设置</p>
+              </div>
+              <div class="setting-control">
+                <input
+                  type="file"
+                  id="importFile"
+                  accept=".json"
+                  style="display: none"
+                />
+                <button class="btn btn-secondary" id="importSettings">
+                  <i class="fas fa-upload"></i>
+                  导入设置
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 底部操作栏 -->
+        <div class="settings-footer">
+          <div class="footer-actions">
+            <button class="btn btn-outline" id="resetSettings">
+              <i class="fas fa-undo"></i>
+              重置所有设置
+            </button>
+            <button class="btn btn-primary" id="saveSettings">
+              <i class="fas fa-save"></i>
+              保存设置
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="/settings/settings.js"></script>
+  <script></script>
+</html>
+</div></div></main><footer id="footer" style="background-image: url(https://wp.upx8.com/api.php?content=风景&amp;t=17);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2019 - 2026 By Magic Yuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent"></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="/js/live2d-enhance.js?v=1.0"></script><script src="/js/snow.js?v=1.0"></script><div class="aplayer no-destroy" data-id="10051718332" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-mini="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":400,"hOffset":20,"vOffset":0},"mobile":{"show":false},"react":{"opacity":0.9},"dialog":{"enable":true},"log":false});</script></body></html>

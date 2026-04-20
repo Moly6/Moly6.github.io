@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Magic Yuan的项目作品展示">
+  <title>作品 - Magic Yuan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/me-global.css">
+  <link rel="stylesheet" href="css/me-navbar.css">
+  <link rel="stylesheet" href="css/me-footer.css">
+  <link rel="stylesheet" href="css/me-project.css">
+  <link rel="stylesheet" href="css/me-button.css">
+  <link rel="stylesheet" href="css/me-animation.css">
+</head>
+<body>
+  <header class="me-navbar" role="banner">
+    <nav class="me-navbar__container" role="navigation" aria-label="主导航">
+      <a href="/" class="me-navbar__brand">
+        <span class="me-navbar__logo">M</span>
+        <span>Magic Yuan</span>
+      </a>
+      <ul class="me-navbar__links">
+        <li><a href="/me/" class="me-navbar__link">关于</a></li>
+        <li><a href="/me/skills.html" class="me-navbar__link">技能</a></li>
+        <li><a href="/me/projects.html" class="me-navbar__link is-active">作品</a></li>
+        <li><a href="/me/contact.html" class="me-navbar__link">联系</a></li>
+      </ul>
+      <div class="me-navbar__divider"></div>
+      <a href="/" class="me-navbar__blog-link">返回博客</a>
+      <button class="me-navbar__toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="me-navbar__mobile-menu">
+      <a href="/me/" class="me-navbar__mobile-link">关于</a>
+      <a href="/me/skills.html" class="me-navbar__mobile-link">技能</a>
+      <a href="/me/projects.html" class="me-navbar__mobile-link is-active">作品</a>
+      <a href="/me/contact.html" class="me-navbar__mobile-link">联系</a>
+      <a href="/" class="me-navbar__mobile-link">返回博客</a>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="me-gradient-bg">
+      <section class="main-content">
+        <div class="container">
+          <h1 class="section-title me-fade-in">项目作品</h1>
+          <p class="me-fade-in" style="text-align:center;color:var(--color-text-secondary);margin-bottom:var(--spacing-12);">
+            这里展示了我参与和创建的一些开源及个人项目
+          </p>
+
+          <div class="me-project-grid">
+            <article class="me-project-card me-fade-in">
+              <div class="me-project-card__image" style="display:flex;align-items:center;justify-content:center;background:var(--gradient-primary);color:white;font-size:var(--font-size-xl);font-weight:600;">
+                WorkflowEngine
+              </div>
+              <div class="me-project-card__content">
+                <h3 class="me-project-card__title">WorkflowCore Extensions</h3>
+                <p class="me-project-card__description">
+                  基于WorkflowCore的工作流引擎扩展，提供了更丰富的活动节点和可视化流程设计器支持。
+                </p>
+                <div class="me-project-card__tags">
+                  <span class="me-project-card__tag">C#</span>
+                  <span class="me-project-card__tag">.NET Core</span>
+                  <span class="me-project-card__tag">Workflow</span>
+                </div>
+                <div class="me-project-card__links">
+                  <a href="https://github.com/Moly6/WorkflowCore.Extensions" class="me-project-card__link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    源代码
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="me-project-card me-fade-in">
+              <div class="me-project-card__image" style="display:flex;align-items:center;justify-content:center;background:var(--color-surface-light);color:var(--color-primary);font-size:var(--font-size-xl);font-weight:600;">
+                TLV Parser
+              </div>
+              <div class="me-project-card__content">
+                <h3 class="me-project-card__title">C# TLV数据解析器</h3>
+                <p class="me-project-card__description">
+                  纯C#实现的TLV(Tag-Length-Value)数据格式解析器，支持自定义标签和嵌套结构。
+                </p>
+                <div class="me-project-card__tags">
+                  <span class="me-project-card__tag">C#</span>
+                  <span class="me-project-card__tag">Parser</span>
+                  <span class="me-project-card__tag">Network</span>
+                </div>
+                <div class="me-project-card__links">
+                  <a href="https://github.com/Moly6/TLV-Parser" class="me-project-card__link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    源代码
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="me-project-card me-fade-in">
+              <div class="me-project-card__image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#11998e,#38ef7d);color:white;font-size:var(--font-size-xl);font-weight:600;">
+                Avalonia
+              </div>
+              <div class="me-project-card__content">
+                <h3 class="me-project-card__title">Avalonia XAML格式化工具</h3>
+                <p class="me-project-card__description">
+                  为Avalonia框架开发的XAML代码格式化配置，提供一致的代码风格和格式化规则。
+                </p>
+                <div class="me-project-card__tags">
+                  <span class="me-project-card__tag">Avalonia</span>
+                  <span class="me-project-card__tag">XAML</span>
+                  <span class="me-project-card__tag">Tools</span>
+                </div>
+                <div class="me-project-card__links">
+                  <a href="https://github.com/Moly6/Avalonia-XAML-Formatter" class="me-project-card__link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    源代码
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="me-project-card me-fade-in">
+              <div class="me-project-card__image" style="display:flex;align-items:center;justify-content:center;background:var(--color-surface-light);color:var(--color-accent);font-size:var(--font-size-xl);font-weight:600;">
+                PowerShell
+              </div>
+              <div class="me-project-card__content">
+                <h3 class="me-project-card__title">Windows运行库一键安装工具</h3>
+                <p class="me-project-card__description">
+                  PowerShell脚本工具，自动检测并安装Windows系统缺失的各类Microsoft运行库。
+                </p>
+                <div class="me-project-card__tags">
+                  <span class="me-project-card__tag">PowerShell</span>
+                  <span class="me-project-card__tag">Windows</span>
+                  <span class="me-project-card__tag">Automation</span>
+                </div>
+                <div class="me-project-card__links">
+                  <a href="https://github.com/Moly6/Windows-Runtimes-Installer" class="me-project-card__link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    源代码
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="me-project-card me-fade-in">
+              <div class="me-project-card__image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#667eea,#764ba2);color:white;font-size:var(--font-size-xl);font-weight:600;">
+                MQTT
+              </div>
+              <div class="me-project-card__content">
+                <h3 class="me-project-card__title">MQTT消息队列实践</h3>
+                <p class="me-project-card__description">
+                  C#实现的MQTT协议客户端示例，展示了如何在.NET应用中集成MQTT进行消息收发。
+                </p>
+                <div class="me-project-card__tags">
+                  <span class="me-project-card__tag">C#</span>
+                  <span class="me-project-card__tag">MQTT</span>
+                  <span class="me-project-card__tag">IoT</span>
+                </div>
+                <div class="me-project-card__links">
+                  <a href="https://github.com/Moly6/MQTT-Examples" class="me-project-card__link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    源代码
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="me-project-card me-fade-in">
+              <div class="me-project-card__image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f093fb,#f5576c);color:white;font-size:var(--font-size-xl);font-weight:600;">
+                RabbitMQ
+              </div>
+              <div class="me-project-card__content">
+                <h3 class="me-project-card__title">RabbitMQ实战应用</h3>
+                <p class="me-project-card__description">
+                  基于RabbitMQ的分布式消息队列实践，包含多种交换机类型和死信队列配置示例。
+                </p>
+                <div class="me-project-card__tags">
+                  <span class="me-project-card__tag">C#</span>
+                  <span class="me-project-card__tag">RabbitMQ</span>
+                  <span class="me-project-card__tag">Distributed</span>
+                </div>
+                <div class="me-project-card__links">
+                  <a href="https://github.com/Moly6/RabbitMQ-Practices" class="me-project-card__link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    源代码
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="me-footer" role="contentinfo">
+      <div class="me-footer__container">
+        <div class="me-footer__info">
+          <p class="me-footer__copyright">&copy; 2024 Magic Yuan. All rights reserved.</p>
+          <p class="me-footer__author">Made with <span style="color: var(--color-error);">&hearts;</span> using Hexo & Butterfly</p>
+        </div>
+        <div class="me-footer__links">
+          <a href="https://github.com/Moly6" class="me-footer__link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="js/me-main.js"></script>
+</body>
+</html>
