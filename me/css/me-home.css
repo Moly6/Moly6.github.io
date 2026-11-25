@@ -1,0 +1,119 @@
+.me-hero {
+  text-align: center;
+  padding: var(--spacing-16) 0;
+}
+
+.me-hero__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  padding: 3px;
+  margin: 0 auto var(--spacing-6);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+}
+
+.me-hero__avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-surface);
+}
+
+.me-hero__name {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-2);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.me-hero__title {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+}
+
+.me-hero__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-8);
+  line-height: var(--line-height-relaxed);
+}
+
+.me-hero__cta {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.me-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-12);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.me-stat {
+  text-align: center;
+  padding: var(--spacing-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.me-stat:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.me-stat__value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.me-stat__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.me-quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-12);
+}
+
+@media (max-width: 768px) {
+  .me-hero {
+    padding: var(--spacing-8) 0;
+  }
+
+  .me-hero__name {
+    font-size: var(--font-size-2xl);
+  }
+
+  .me-hero__title {
+    font-size: var(--font-size-lg);
+  }
+
+  .me-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .me-stat {
+    padding: var(--spacing-4);
+  }
+}
